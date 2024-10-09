@@ -8,6 +8,7 @@ import { DataType } from "../../types";
 import AreaB from "./areas/AreaB";
 import AreaD from "./areas/AreaD";
 import AreaC from "./areas/AreaC";
+import MovingCar from "./areas_component/MovingCar";
 
 const Item = styled.div`
   background-color: #2f2f2f;
@@ -47,6 +48,20 @@ const Status = () => {
                 {data?.data.parking ? <AreaB parking={data.data.parking} /> : <div>loading...</div>}
                 {data?.data.parking ? <AreaC parking={data.data.parking} /> : <div>loading...</div>}
                 {data?.data.parking ? <AreaD parking={data.data.parking} /> : <div>loading...</div>}
+                {data?.data.moving ? (
+                  Object.entries(data.data.moving).map(([key], index) => {
+                    const keyAsNumber = parseInt(key);
+                    return (
+                      <MovingCar
+                        key={index}
+                        currentPosition={data.data.moving[keyAsNumber].position}
+                        prevPosition={prevData?.data.moving[keyAsNumber].position}
+                      />
+                    );
+                  })
+                ) : (
+                  <></>
+                )}
               </Item>
             </Grid2>
           </Grid2>
