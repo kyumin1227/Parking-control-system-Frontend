@@ -1,14 +1,33 @@
 import { Grid2 } from "@mui/material";
 import styled from "styled-components";
 import Title from "./title";
+import GetData from "../../api/socket";
+import { useEffect, useState } from "react";
+import AreaA from "./areas/AreaA";
+import { DataType } from "../../types";
+import AreaB from "./areas/AreaB";
+import AreaD from "./areas/AreaD";
+import AreaC from "./areas/AreaC";
 
 const Item = styled.div`
   background-color: #2f2f2f;
   height: 100%;
   width: 100%;
+  position: relative;
 `;
 
 const Status = () => {
+  const [data, setData] = useState<DataType | null>(null);
+  const [prevData, setPrevData] = useState<DataType | null>(null);
+
+  // 데이터 변화 추적을 위한 콘솔 출력
+  useEffect(() => {
+    console.log("Prev Data");
+    console.log(prevData?.data);
+    console.log("Current Data");
+    console.log(data?.data);
+  }, [prevData, data]); // 데이터가 변경될 때마다 실행됨
+
   return (
     <>
       <Grid2 container width={"100%"} height={"100%"}>
@@ -23,11 +42,17 @@ const Status = () => {
               <Title />
             </Grid2>
             <Grid2 size={11} height={"930px"}>
-              <Item />
+              <Item>
+                {data?.data.parking ? <AreaA parking={data.data.parking} /> : <div>loading...</div>}
+                {data?.data.parking ? <AreaB parking={data.data.parking} /> : <div>loading...</div>}
+                {data?.data.parking ? <AreaC parking={data.data.parking} /> : <div>loading...</div>}
+                {data?.data.parking ? <AreaD parking={data.data.parking} /> : <div>loading...</div>}
+              </Item>
             </Grid2>
           </Grid2>
         </Grid2>
       </Grid2>
+      <GetData data={data} setData={setData} prevData={prevData} setPrevData={setPrevData} />
     </>
   );
 };
