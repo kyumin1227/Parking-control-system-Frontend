@@ -2,8 +2,9 @@ import { Grid2, Typography } from "@mui/material";
 import { useTheme } from "styled-components";
 import DonutChart from "./chart/ApexChart";
 import StatusIconAndText from "./StatusIconAndText";
+import { ParkingAreasType } from "../../../types";
 
-const AllStatus = () => {
+const AllStatus = ({ parking }: ParkingAreasType) => {
   const theme = useTheme();
   const series: [number, number, number] = [44, 55, 41];
 

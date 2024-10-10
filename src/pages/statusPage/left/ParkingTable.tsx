@@ -1,6 +1,6 @@
 import { Grid2, Typography } from "@mui/material";
 import ParkingColumns from "./ParkingColumns";
-import { ParkingAreaType } from "../../types";
+import { ParkingAreaType } from "../../../types";
 
 type ParkingTableProps = {
   parking: Record<number, ParkingAreaType>;

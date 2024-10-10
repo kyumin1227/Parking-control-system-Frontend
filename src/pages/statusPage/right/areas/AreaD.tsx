@@ -1,5 +1,5 @@
 import { Grid2 } from "@mui/material";
-import { ParkingAreasType } from "../../../types";
+import { ParkingAreasType } from "../../../../types";
 import ParkingArea from "../areas_component/ParkingArea";
 import AreaText from "../areas_component/AreaText";
 

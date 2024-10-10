@@ -1,5 +1,5 @@
 import { useTheme } from "styled-components";
-import { ParkingAreaType } from "../../../types";
+import { ParkingAreaType } from "../../../../types";
 
 const ParkingArea = ({ status }: ParkingAreaType) => {
   const theme = useTheme();

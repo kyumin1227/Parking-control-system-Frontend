@@ -1,13 +1,13 @@
 import { Grid2 } from "@mui/material";
-import { ParkingAreasType } from "../../../types";
+import { ParkingAreasType } from "../../../../types";
 import ParkingArea from "../areas_component/ParkingArea";
 import AreaText from "../areas_component/AreaText";
 
-const AreaC = ({ parking }: ParkingAreasType) => {
+const AreaB = ({ parking }: ParkingAreasType) => {
   return (
     <>
-      <Grid2 position={"absolute"} top={"600px"} left={"300px"} display={"flex"}>
-        <AreaText text="C" />
+      <Grid2 position={"absolute"} top={"250px"} left={"300px"} display={"flex"}>
+        <AreaText text="B" />
         <Grid2
           display={"flex"}
           flexWrap={"wrap"}
@@ -20,7 +20,7 @@ const AreaC = ({ parking }: ParkingAreasType) => {
           }}
         >
           {Object.entries(parking)
-            .slice(10, 14)
+            .slice(6, 10)
             .map((item, index) => {
               return <ParkingArea key={index} status={item[1].status} />;
             })}
@@ -30,4 +30,4 @@ const AreaC = ({ parking }: ParkingAreasType) => {
   );
 };
 
-export default AreaC;
+export default AreaB;

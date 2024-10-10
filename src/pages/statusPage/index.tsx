@@ -1,16 +1,16 @@
 import { Grid2, Typography } from "@mui/material";
 import styled from "styled-components";
-import Title from "./title";
+import Title from "./right/title";
 import GetData from "../../api/socket";
 import { useEffect, useState } from "react";
-import AreaA from "./areas/AreaA";
+import AreaA from "./right/areas/AreaA";
 import { DataType } from "../../types";
-import AreaB from "./areas/AreaB";
-import AreaD from "./areas/AreaD";
-import AreaC from "./areas/AreaC";
-import MovingCar from "./areas_component/MovingCar";
-import ParkingTable from "./ParkingTable";
-import AllStatus from "./AllStatus";
+import AreaB from "./right/areas/AreaB";
+import AreaD from "./right/areas/AreaD";
+import AreaC from "./right/areas/AreaC";
+import MovingCar from "./right/areas_component/MovingCar";
+import ParkingTable from "./left/ParkingTable";
+import AllStatus from "./left/AllStatus";
 
 const Item = styled.div`
   background-color: #2f2f2f;
@@ -30,8 +30,9 @@ const Status = () => {
     console.log("Current Data");
     console.log(data?.data);
   }, [prevData, data]); // 데이터가 변경될 때마다 실행됨
-  // TODO 전체 추자 정보 표시하는 부분 구현
+
   // TODO 이동 구역의 좌표 정보를 받아와서 맞추는 코드 필요 (2번 왼쪽 위, 2번 오른쪽 아래, 9번 왼쪽 위, 7번 오른쪽 아래, 14번 왼쪽 위, 14번 오른쪽 아래)
+
   return (
     <>
       <Grid2 container width={"100%"} height={"100%"}>
@@ -49,7 +50,7 @@ const Status = () => {
               </Typography>
             </Grid2>
             <Grid2 height={"50%"}>
-              <AllStatus />
+              <AllStatus parking={data?.data.parking || {}} />
             </Grid2>
             <Grid2 height={"40%"}>
               <ParkingTable parking={data?.data.parking || {}} />
