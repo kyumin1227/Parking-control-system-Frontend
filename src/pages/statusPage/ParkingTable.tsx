@@ -12,7 +12,7 @@ const ParkingTable = ({ parking }: ParkingTableProps) => {
   return (
     <>
       <Grid2 height={"100%"}>
-        <Grid2 container width={"100%"} spacing={1.5} height={"20%"}>
+        <Grid2 container width={"100%"} spacing={2} height={"20%"}>
           <Grid2 size={4} display={"flex"} alignItems={"center"}>
             <img src="/car_black.png" width={"100%"} />
           </Grid2>

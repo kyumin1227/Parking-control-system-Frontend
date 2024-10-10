@@ -10,6 +10,7 @@ import AreaD from "./areas/AreaD";
 import AreaC from "./areas/AreaC";
 import MovingCar from "./areas_component/MovingCar";
 import ParkingTable from "./ParkingTable";
+import AllStatus from "./AllStatus";
 
 const Item = styled.div`
   background-color: #2f2f2f;
@@ -42,16 +43,18 @@ const Status = () => {
           alignContent={"center"}
         >
           <Grid2 display={"flex"} flexDirection={"column"} width={"410px"} height={"1010px"} marginTop={"15px"}>
-            <Grid2 display={"flex"} height={"50px"} justifyContent={"center"}>
+            <Grid2 display={"flex"} height={"5%"} justifyContent={"center"}>
               <Typography fontSize={"40px"} color="#FABD2C">
                 전체 주차 정보
               </Typography>
             </Grid2>
-            <Grid2 height={"40%"}></Grid2>
+            <Grid2 height={"50%"}>
+              <AllStatus />
+            </Grid2>
             <Grid2 height={"40%"}>
               <ParkingTable parking={data?.data.parking || {}} />
             </Grid2>
-            <Grid2 height={"10%"}>
+            <Grid2 height={"auto"} mt={2.5}>
               <img src="/logo.png" width={"100%"} />
             </Grid2>
           </Grid2>
