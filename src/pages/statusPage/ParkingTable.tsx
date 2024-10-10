@@ -12,17 +12,17 @@ const ParkingTable = ({ parking }: ParkingTableProps) => {
   return (
     <>
       <Grid2 height={"100%"}>
-        <Grid2 container width={"100%"} spacing={2} height={"20%"}>
+        <Grid2 container width={"100%"} spacing={2} height={"17%"}>
           <Grid2 size={4} display={"flex"} alignItems={"center"}>
             <img src="/car_black.png" width={"100%"} />
           </Grid2>
           <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#0D1117" }}>
-            <Typography fontSize={"30px"} color="#FE8019" style={{ verticalAlign: "middle" }}>
+            <Typography fontSize={"30px"} color="#FE8019" style={{ display: "flex", alignItems: "center" }}>
               주차
             </Typography>
           </Grid2>
           <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#0D1117" }}>
-            <Typography fontSize={"30px"} color="#8EC07C" style={{ verticalAlign: "middle" }}>
+            <Typography fontSize={"30px"} color="#8EC07C" style={{ display: "flex", alignItems: "center" }}>
               공차
             </Typography>
           </Grid2>

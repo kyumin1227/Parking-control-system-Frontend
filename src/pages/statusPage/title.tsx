@@ -6,13 +6,13 @@ import { Grid2, Typography } from "@mui/material";
 const Title = () => {
   return (
     <>
-      <Grid2 container mb={"20px"} display={"flex"} justifyContent={"center"}>
+      <Grid2 container mt={"10px"} mb={"10px"} display={"flex"} justifyContent={"center"}>
         <img
           src="/P_image.png"
           alt="P_image"
-          width="60px"
-          height="60px"
-          style={{ marginTop: "15px", marginRight: "5px" }}
+          width="70px"
+          height="70px"
+          style={{ marginTop: "5px", marginRight: "5px" }}
         />
         <Typography color="#FABD2C" fontSize={"60px"}>
           arking Status
