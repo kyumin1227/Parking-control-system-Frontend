@@ -11,10 +11,10 @@ const ParkingColumns = ({ parking, area }: ParkingColumnsProps) => {
   let parkingCount = 0;
 
   parking.forEach(([key, value]) => {
-    if (value.status === "empty") {
-      emptyCount++;
-    } else if (value.status === "parking") {
+    if (value.status === "parking") {
       parkingCount++;
+    } else {
+      emptyCount++;
     }
   });
 

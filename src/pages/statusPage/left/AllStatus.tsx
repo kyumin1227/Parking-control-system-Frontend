@@ -6,7 +6,16 @@ import { ParkingAreasType } from "../../../types";
 
 const AllStatus = ({ parking }: ParkingAreasType) => {
   const theme = useTheme();
-  const series: [number, number, number] = [44, 55, 41];
+
+  let parkingLen = 0;
+  let targetLen = 0;
+  let emptyLen = 0;
+
+  Object.values(parking).forEach((value) => {
+    value.status === "parking" ? parkingLen++ : value.status === "target" ? targetLen++ : emptyLen++;
+  });
+
+  const series: [number, number, number] = [parkingLen, targetLen, emptyLen];
 
   return (
     <>
@@ -25,7 +34,7 @@ const AllStatus = ({ parking }: ParkingAreasType) => {
               mt={1}
             >
               <Typography fontSize={80} color={theme.colors.orange}>
-                12
+                {parkingLen}
               </Typography>
             </Grid2>
           </Grid2>
@@ -42,7 +51,7 @@ const AllStatus = ({ parking }: ParkingAreasType) => {
               mt={1}
             >
               <Typography fontSize={80} color={theme.colors.green}>
-                12
+                {targetLen + emptyLen}
               </Typography>
             </Grid2>
           </Grid2>
@@ -65,7 +74,7 @@ const AllStatus = ({ parking }: ParkingAreasType) => {
             >
               <Grid2 display={"flex"} ml={1}>
                 <Typography lineHeight={1} fontSize={70} color={theme.colors.orange}>
-                  54
+                  {((parkingLen / (parkingLen + targetLen + emptyLen)) * 100).toFixed(0)}
                 </Typography>
                 <Typography fontSize={30} color={theme.colors.orange} sx={{ display: "flex", alignItems: "end" }}>
                   %
