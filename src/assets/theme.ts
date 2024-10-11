@@ -10,6 +10,10 @@ export const theme: DefaultTheme = {
     blue: "#3572A5",
     black: "#0D1117",
     grey: "#2F2F2F",
+    grey2: "#7E7E7E",
+    grey3: "#7D7D7D",
+    white: "#FFFFFF",
+    white2: "#D9D9D9",
   },
 };
 
@@ -30,6 +34,14 @@ declare module "styled-components" {
       black: string;
       /** 회색 배경 색상 */
       grey: string;
+      /** 밝은 회색 */
+      grey2: string;
+      /** 밝은 회색 2 (주차 진행 중, 출차 중 차량 배경)*/
+      grey3: string;
+      /** 흰색 */
+      white: string;
+      /** 흰색 2 */
+      white2: string;
     };
   }
 }
