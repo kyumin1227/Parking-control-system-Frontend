@@ -6,6 +6,7 @@ type ParkingTableProps = {
   parking: Record<number, ParkingAreaType>;
 };
 
+/** 구역별 주차 정보 표 */
 const ParkingTable = ({ parking }: ParkingTableProps) => {
   console.log(Object.entries(parking));
 

@@ -4,6 +4,7 @@ import DonutChart from "./chart/ApexChart";
 import StatusIconAndText from "./StatusIconAndText";
 import { ParkingAreasType } from "../../../types";
 
+/** 왼쪽 위의 전체 주차 정보 ~ 도넛 차트 까지 */
 const AllStatus = ({ parking }: ParkingAreasType) => {
   const theme = useTheme();
 
@@ -20,6 +21,7 @@ const AllStatus = ({ parking }: ParkingAreasType) => {
   return (
     <>
       <Grid2 mt={2}>
+        {/* 주차, 공차 정보 */}
         <Grid2 container spacing={2}>
           <Grid2 size={6} display={"flex"} flexDirection={"column"} alignItems={"center"}>
             <Typography fontSize={40} color={theme.colors.orange}>
@@ -56,6 +58,7 @@ const AllStatus = ({ parking }: ParkingAreasType) => {
             </Grid2>
           </Grid2>
         </Grid2>
+        {/* 주차, 주차중, 공차 아이콘 & 도넛 차트 */}
         <Grid2 container height={"100%"} mt={3}>
           <Grid2 size={5} container display={"flex"}>
             <StatusIconAndText color={theme.colors.orange} text="주차" />

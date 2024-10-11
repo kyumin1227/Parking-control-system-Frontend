@@ -6,6 +6,7 @@ type ParkingColumnsProps = {
   area: string;
 };
 
+/** 구역별 주차 정보의 열 */
 const ParkingColumns = ({ parking, area }: ParkingColumnsProps) => {
   let emptyCount = 0;
   let parkingCount = 0;

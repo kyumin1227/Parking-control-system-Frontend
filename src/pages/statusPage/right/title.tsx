@@ -1,8 +1,6 @@
 import { Grid2, Typography } from "@mui/material";
 
-/**
- * Parking status 제목 표시
- */
+/** Parking status 제목 표시 */
 const Title = () => {
   return (
     <>
