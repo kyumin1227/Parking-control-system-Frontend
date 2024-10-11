@@ -1,8 +1,8 @@
 import { Grid2, Typography } from "@mui/material";
-import { ParkingAreaType } from "../../../types";
+import { ParkingType } from "../../../types";
 
 type ParkingColumnsProps = {
-  parking: [string, ParkingAreaType][];
+  parking: [string, ParkingType][];
   area: string;
 };
 

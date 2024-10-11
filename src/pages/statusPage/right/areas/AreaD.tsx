@@ -1,9 +1,9 @@
 import { Grid2 } from "@mui/material";
-import { ParkingAreasType } from "../../../../types";
+import { ParkingsType } from "../../../../types";
 import ParkingArea from "../areas_component/ParkingArea";
 import AreaText from "../areas_component/AreaText";
 
-const AreaD = ({ parking }: ParkingAreasType) => {
+const AreaD = ({ parking }: ParkingsType) => {
   return (
     <>
       <Grid2 display={"flex"} position={"absolute"} top={"15px"} left={"1155px"}>

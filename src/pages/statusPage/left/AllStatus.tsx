@@ -2,10 +2,10 @@ import { Grid2, Typography } from "@mui/material";
 import { useTheme } from "styled-components";
 import DonutChart from "./chart/ApexChart";
 import StatusIconAndText from "./StatusIconAndText";
-import { ParkingAreasType } from "../../../types";
+import { ParkingsType } from "../../../types";
 
 /** 왼쪽 위의 전체 주차 정보 ~ 도넛 차트 까지 */
-const AllStatus = ({ parking }: ParkingAreasType) => {
+const AllStatus = ({ parking }: ParkingsType) => {
   const theme = useTheme();
 
   let parkingLen = 0;

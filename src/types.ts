@@ -1,11 +1,13 @@
-export type ParkingAreaType = {
+export type ParkingType = {
   status: string;
   car_number?: string;
   parking_time?: string;
+  entry_time?: string;
+  name?: string;
 };
 
-export type ParkingAreasType = {
-  parking: Record<number, ParkingAreaType>;
+export type ParkingsType = {
+  parking: Record<number, ParkingType>;
 };
 
 export type MovingDataType = {
@@ -14,11 +16,11 @@ export type MovingDataType = {
 };
 
 export type DataType = {
-  data: { parking: Record<number, ParkingAreaType>; time: number; moving: Record<number, MovingDataType> };
+  data: { parking: Record<number, ParkingType>; time: number; moving: Record<number, MovingDataType> };
 };
 
 export type DataTypeUnpack = {
-  parking: Record<number, ParkingAreaType>;
+  parking: Record<number, ParkingType>;
   time: number;
   moving: Record<number, MovingDataType>;
 };

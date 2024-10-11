@@ -1,9 +1,9 @@
 import { Grid2, Typography } from "@mui/material";
 import ParkingColumns from "./ParkingColumns";
-import { ParkingAreaType } from "../../../types";
+import { ParkingType } from "../../../types";
 
 type ParkingTableProps = {
-  parking: Record<number, ParkingAreaType>;
+  parking: Record<number, ParkingType>;
 };
 
 /** 구역별 주차 정보 표 */
