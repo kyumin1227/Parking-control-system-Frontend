@@ -1,7 +1,12 @@
 import { Grid2, Typography } from "@mui/material";
 import { useTheme } from "styled-components";
+import { ParkingType } from "../../../types";
 
-const CarInfo = () => {
+interface CarInfoProps {
+  data: ParkingType;
+}
+
+const CarInfo = ({ data }: CarInfoProps) => {
   const theme = useTheme();
 
   return (
@@ -34,7 +39,7 @@ const CarInfo = () => {
             </Typography>
             <Grid2 width={"211px"} display={"flex"} justifyContent={"center"}>
               <Typography fontSize={30} height={20} color={theme.colors.white2} sx={{ lineHeight: "20px" }}>
-                123가4567
+                {data.car_number}
               </Typography>
             </Grid2>
           </Grid2>
@@ -45,7 +50,8 @@ const CarInfo = () => {
             </Typography>
             <Grid2 width={"211px"} display={"flex"} justifyContent={"center"}>
               <Typography fontSize={30} height={20} color={theme.colors.white2} sx={{ lineHeight: "20px" }}>
-                17 : 55 : 55
+                {/* 시간 형식 변경 필요 */}
+                {data.entry_time}
               </Typography>
             </Grid2>
           </Grid2>

@@ -1,10 +1,20 @@
 import { Grid2, Typography } from "@mui/material";
 import styled, { useTheme } from "styled-components";
 import ParkingInfosA from "./ParkingInfosA";
+import { DataType } from "../../../types";
+import { useEffect } from "react";
 
-const ParkingInfos = () => {
+type ParkingInfosProps = {
+  data: DataType;
+};
+
+const ParkingInfos = ({ data }: ParkingInfosProps) => {
   const theme = useTheme();
   const alphabets = ["A", "B", "C", "D"];
+
+  //   useEffect(() => {
+  //     console.log(Object.entries(data.data.parking).slice(0, 6));
+  //   }, [data]);
 
   const renderNumbers = () => {
     const numbers = [];
@@ -17,6 +27,7 @@ const ParkingInfos = () => {
           justifyContent={"center"}
           alignItems={"center"}
           sx={{ backgroundColor: theme.colors.grey2 }}
+          key={i}
         >
           <InformationTypography fontSize={60}>{i}</InformationTypography>
         </Grid2>
@@ -51,7 +62,7 @@ const ParkingInfos = () => {
             {renderNumbers()}
           </Grid2>
           <Grid2 width={"100%"} height={221.5} mt={2.5}>
-            <ParkingInfosA />
+            <ParkingInfosA data={Object.entries(data.data.parking).slice(0, 6)} />
           </Grid2>
         </Grid2>
       </Grid2>

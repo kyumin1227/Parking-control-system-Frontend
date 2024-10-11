@@ -2,9 +2,15 @@ import { Grid2, Typography } from "@mui/material";
 import styled, { useTheme } from "styled-components";
 import CarsInfo from "./left/CarsInfo";
 import ParkingInfos from "./right/ParkingInfos";
+import { useState } from "react";
+import { DataType } from "../../types";
+import GetData from "../../api/socket";
 
 const Information = () => {
   const theme = useTheme();
+
+  const [data, setData] = useState<DataType | null>(null);
+  const [prevData, setPrevData] = useState<DataType | null>(null);
 
   return (
     <>
@@ -21,14 +27,15 @@ const Information = () => {
             Information
           </InformationTypography>
           <Grid2 height={"93%"}>
-            <CarsInfo />
-            <CarsInfo />
+            {<CarsInfo text="주차 진행 중" data={data || { data: { parking: {}, moving: {}, time: 0 } }} />}
+            {<CarsInfo text="출차 중" data={data || { data: { parking: {}, moving: {}, time: 0 } }} />}
           </Grid2>
         </Grid2>
         <Grid2 size={9}>
-          <ParkingInfos />
+          <ParkingInfos data={data || { data: { parking: {}, moving: {}, time: 0 } }} />
         </Grid2>
       </Grid2>
+      <GetData data={data} setData={setData} prevData={prevData} setPrevData={setPrevData} />
     </>
   );
 };
