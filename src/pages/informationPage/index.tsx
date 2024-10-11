@@ -1,6 +1,7 @@
 import { Grid2, Typography } from "@mui/material";
 import styled, { useTheme } from "styled-components";
 import CarsInfo from "./left/CarsInfo";
+import ParkingInfos from "./right/ParkingInfos";
 
 const Information = () => {
   const theme = useTheme();
@@ -24,7 +25,9 @@ const Information = () => {
             <CarsInfo />
           </Grid2>
         </Grid2>
-        <Grid2 size={9}></Grid2>
+        <Grid2 size={9}>
+          <ParkingInfos />
+        </Grid2>
       </Grid2>
     </>
   );
