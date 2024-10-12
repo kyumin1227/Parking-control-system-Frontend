@@ -2,8 +2,13 @@ import { Grid2, Typography } from "@mui/material";
 import ParkingInfo from "./ParkingInfo";
 import { useEffect } from "react";
 import { useTheme } from "styled-components";
+import { ParkingType } from "../../../types";
 
-const ParkingInfosA = ({ data }: any) => {
+type ParkingInfosAProps = {
+  data: [string, ParkingType][];
+};
+
+const ParkingInfosA = ({ data }: ParkingInfosAProps) => {
   const theme = useTheme();
   useEffect(() => {
     console.log(data);
@@ -11,8 +16,8 @@ const ParkingInfosA = ({ data }: any) => {
   return (
     <>
       <Grid2 height={221.5} width={"100%"} display={"flex"}>
-        {data.map((item: any) => (
-          <ParkingInfo key={item[0]} />
+        {data.map((item: [string, ParkingType]) => (
+          <ParkingInfo key={item[0]} data={item[1]} />
         ))}
         <Grid2
           ml={1}

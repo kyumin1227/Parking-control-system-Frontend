@@ -3,6 +3,9 @@ import styled, { useTheme } from "styled-components";
 import ParkingInfosA from "./ParkingInfosA";
 import { DataType } from "../../../types";
 import { useEffect } from "react";
+import ParkingInfosB from "./ParkingInfosB";
+import ParkingInfosC from "./ParkingInfosC";
+import ParkingInfosD from "./ParkingInfosD";
 
 type ParkingInfosProps = {
   data: DataType;
@@ -63,6 +66,18 @@ const ParkingInfos = ({ data }: ParkingInfosProps) => {
           </Grid2>
           <Grid2 width={"100%"} height={221.5} mt={2.5}>
             <ParkingInfosA data={Object.entries(data.data.parking).slice(0, 6)} />
+            <Grid2 width={"100%"} height={463} mt={2.5} display={"flex"}>
+              <Grid2 width={664.685} height={"100%"} display={"flex"} flexDirection={"column"}>
+                <ParkingInfosB data={Object.entries(data.data.parking).slice(6, 10)} />
+                <ParkingInfosC data={Object.entries(data.data.parking).slice(10, 14)} />
+              </Grid2>
+              <Grid2 width={656.67} ml={1}>
+                <img src="/car_area.svg" width={"100%"} height={"100%"} />
+              </Grid2>
+            </Grid2>
+            <Grid2 mt={2.5}>
+              <ParkingInfosD data={Object.entries(data.data.parking).slice(14, 22)} />
+            </Grid2>
           </Grid2>
         </Grid2>
       </Grid2>
