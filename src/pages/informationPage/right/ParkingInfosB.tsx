@@ -1,14 +1,12 @@
 import { Grid2 } from "@mui/material";
 import { ParkingType } from "../../../types";
 import ParkingInfo from "./ParkingInfo";
-import { useTheme } from "styled-components";
 
 type ParkingInfosBProps = {
   data: [string, ParkingType][];
 };
 
 const ParkingInfosB = ({ data }: ParkingInfosBProps) => {
-  const theme = useTheme();
   return (
     <>
       <Grid2 height={221.5} display={"flex"}>

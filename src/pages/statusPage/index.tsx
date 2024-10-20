@@ -80,7 +80,7 @@ const Status = () => {
                     return (
                       <MovingCar
                         key={index}
-                        currentPosition={data.data.moving[keyAsNumber].position}
+                        currentPosition={data.data.moving[keyAsNumber]?.position || [0, 0]}
                         prevPosition={prevData?.data.moving[keyAsNumber].position}
                       />
                     );

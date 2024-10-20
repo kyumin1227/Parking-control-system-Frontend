@@ -1,6 +1,6 @@
 import { Grid2, Typography } from "@mui/material";
 import { useTheme } from "styled-components";
-import { MovingDataType, ParkingType } from "../../../types";
+import { ParkingType } from "../../../types";
 
 interface CarInfoProps {
   data: ParkingType;
