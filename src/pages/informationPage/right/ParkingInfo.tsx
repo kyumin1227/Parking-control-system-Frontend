@@ -39,7 +39,7 @@ const ParkingInfo = ({ data }: ParkingInfoProps) => {
     setEntryTimeDifference(entryRestul);
   }, [data]);
 
-  if (status === "parking") {
+  if (status === "occupied") {
     // 주차
     return (
       <>

@@ -8,9 +8,7 @@ type ParkingInfosDProps = {
 };
 
 const ParkingInfosD = ({ data }: ParkingInfosDProps) => {
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  useEffect(() => {}, [data]);
   return (
     <>
       <Grid2 height={221.5} width={"100%"} display={"flex"}>

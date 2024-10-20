@@ -13,7 +13,7 @@ const AllStatus = ({ parking }: ParkingsType) => {
   let emptyLen = 0;
 
   Object.values(parking).forEach((value) => {
-    value.status === "parking" ? parkingLen++ : value.status === "target" ? targetLen++ : emptyLen++;
+    value.status === "occupied" ? parkingLen++ : value.status === "target" ? targetLen++ : emptyLen++;
   });
 
   const series: [number, number, number] = [parkingLen, targetLen, emptyLen];

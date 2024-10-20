@@ -1,9 +1,9 @@
 import { Grid2, Typography } from "@mui/material";
 import { useTheme } from "styled-components";
-import { MovingDataType, ParkingType } from "../../../types";
+import { MovingDataType } from "../../../types";
 
 interface CarInfoProps {
-  data: ParkingType;
+  data: MovingDataType;
 }
 
 const CarInfo = ({ data }: CarInfoProps) => {
@@ -28,7 +28,7 @@ const CarInfo = ({ data }: CarInfoProps) => {
               textOrientation: "upright",
             }}
           >
-            {data.name}
+            EXIT
           </Typography>
         </Grid2>
         <Grid2 size={10} display={"flex"} flexDirection={"column"} justifyContent={"space-around"}>

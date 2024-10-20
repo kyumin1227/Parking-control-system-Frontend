@@ -11,9 +11,10 @@ export type ParkingsType = {
 };
 
 export type MovingDataType = {
-  position: [number, number];
+  position?: [number, number];
   entry_time?: number;
   car_number: string;
+  status?: string;
 };
 
 export type DataType = {
