@@ -36,6 +36,7 @@ const Status = () => {
   return (
     <>
       <Grid2 container width={"100%"} height={"100%"}>
+        {/* 왼쪽 */}
         <Grid2
           size={3}
           sx={{ border: 20, borderColor: "#0D1117", backgroundColor: "#2f2f2f" }}
@@ -60,6 +61,7 @@ const Status = () => {
             </Grid2>
           </Grid2>
         </Grid2>
+        {/* 오른쪽 */}
         <Grid2 size={9} sx={{ border: 20, borderLeft: 0, borderColor: "#0D1117" }}>
           <Grid2 container flexDirection={"column"}>
             <Grid2 size={1} width={"100%"}>
@@ -71,13 +73,14 @@ const Status = () => {
                 {data?.data.parking ? <AreaB parking={data.data.parking} /> : <div>loading...</div>}
                 {data?.data.parking ? <AreaC parking={data.data.parking} /> : <div>loading...</div>}
                 {data?.data.parking ? <AreaD parking={data.data.parking} /> : <div>loading...</div>}
+                {/* 움직이는 차량 */}
                 {data?.data.moving ? (
                   Object.entries(data.data.moving).map(([key], index) => {
                     const keyAsNumber = parseInt(key);
                     return (
                       <MovingCar
                         key={index}
-                        currentPosition={data.data.moving[keyAsNumber].position}
+                        currentPosition={data.data.moving[keyAsNumber]?.position || [0, 0]}
                         prevPosition={prevData?.data.moving[keyAsNumber].position}
                       />
                     );

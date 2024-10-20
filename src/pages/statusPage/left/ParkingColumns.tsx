@@ -1,17 +1,18 @@
 import { Grid2, Typography } from "@mui/material";
-import { ParkingAreaType } from "../../../types";
+import { ParkingType } from "../../../types";
 
 type ParkingColumnsProps = {
-  parking: [string, ParkingAreaType][];
+  parking: [string, ParkingType][];
   area: string;
 };
 
+/** 구역별 주차 정보의 열 */
 const ParkingColumns = ({ parking, area }: ParkingColumnsProps) => {
   let emptyCount = 0;
   let parkingCount = 0;
 
-  parking.forEach(([key, value]) => {
-    if (value.status === "parking") {
+  parking.forEach(([, value]) => {
+    if (value.status === "occupied") {
       parkingCount++;
     } else {
       emptyCount++;

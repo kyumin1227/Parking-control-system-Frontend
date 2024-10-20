@@ -3,18 +3,18 @@ import io from "socket.io-client";
 import { DataType } from "../types";
 
 interface GetDataProps {
-  data: DataType | null;
+  data?: DataType | null;
 
   setData: React.Dispatch<React.SetStateAction<DataType | null>>;
 
-  prevData: DataType | null;
+  prevData?: DataType | null;
 
   setPrevData: React.Dispatch<React.SetStateAction<DataType | null>>;
 }
 
 /**
  * socketio를 이용하여 데이터를 받아오는 컴포넌트
- * @param param0 data, setData, prevData, setPrevData
+ * @param param0 setData, setPrevData
  */
 const GetData = ({ setData, setPrevData }: GetDataProps) => {
   // 소켓 연결을 처음에 한 번만 설정하기 위해 useEffect로 감쌈
