@@ -35,7 +35,7 @@ const MovingCar = ({ currentPosition, prevPosition }: movingCarProps) => {
   }, [currentPosition, prevPosition]);
   return (
     <>
-      <Grid2 position={"absolute"} top={currentPosition[0]} left={currentPosition[1]}>
+      <Grid2 position={"absolute"} left={currentPosition[0]} top={currentPosition[1]}>
         <img src="/moving_car_image.png" style={{ transform: `rotate(${rotation}deg)`, width: "100px" }} />
       </Grid2>
     </>
