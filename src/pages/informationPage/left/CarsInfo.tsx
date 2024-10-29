@@ -18,9 +18,9 @@ const CarsInfo = ({ text, data }: CarsInfoProps) => {
   return (
     <>
       <Grid2
-        height={"50%"}
+        height={"483.59px"}
         borderTop={`20px solid ${theme.colors.black}`}
-        sx={{ backgroundColor: `${theme.colors.grey}` }}
+        sx={{ backgroundColor: `${theme.colors.grey}`, overflowY: "hidden" }}
         p={2.5}
       >
         <Typography
@@ -33,7 +33,6 @@ const CarsInfo = ({ text, data }: CarsInfoProps) => {
         >
           {text}
         </Typography>
-        {/* TODO 출차 중인 차량 계산 */}
         {text === "주차 진행 중"
           ? Object.values(data.data.parking).map((value) => value.status === "target" && <CarInfo data={value} />)
           : Object.values(data.data.moving).map((value) => value.status === "exit" && <CarInfoExit data={value} />)}

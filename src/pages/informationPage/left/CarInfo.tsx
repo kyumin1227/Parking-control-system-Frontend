@@ -6,6 +6,10 @@ interface CarInfoProps {
   data: ParkingType;
 }
 
+function formatTime(timestamp: number): string {
+  return new Date(timestamp).toISOString().substr(11, 8);
+}
+
 const CarInfo = ({ data }: CarInfoProps) => {
   const theme = useTheme();
 
@@ -49,9 +53,8 @@ const CarInfo = ({ data }: CarInfoProps) => {
               입장 시간
             </Typography>
             <Grid2 width={"211px"} display={"flex"} justifyContent={"center"}>
-              <Typography fontSize={30} height={20} color={theme.colors.white2} sx={{ lineHeight: "20px" }}>
-                {/* 시간 형식 변경 필요 */}
-                {data.entry_time}
+              <Typography fontSize={30} height={20} color={theme.colors.white2} sx={{ lineHeight: "26px" }}>
+                {formatTime(Number(data.entry_time))}
               </Typography>
             </Grid2>
           </Grid2>

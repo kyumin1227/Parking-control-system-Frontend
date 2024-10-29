@@ -1,9 +1,14 @@
 import { Grid2, Typography } from "@mui/material";
 import { useTheme } from "styled-components";
 import { MovingDataType } from "../../../types";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 interface CarInfoProps {
   data: MovingDataType;
+}
+
+function formatTime(timestamp: number): string {
+  return new Date(timestamp).toISOString().substr(11, 8);
 }
 
 const CarInfo = ({ data }: CarInfoProps) => {
@@ -16,18 +21,12 @@ const CarInfo = ({ data }: CarInfoProps) => {
           size={2}
           sx={{ backgroundColor: theme.colors.grey }}
           display={"flex"}
+          flexDirection={"column"}
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Typography
-            color={theme.colors.white}
-            fontSize={35}
-            sx={{
-              // 세로 표시
-              writingMode: "vertical-rl",
-              textOrientation: "upright",
-            }}
-          >
+          <ExitToAppIcon fontSize={"large"} sx={{ color: "white" }} />
+          <Typography color="white" mt={0.5}>
             EXIT
           </Typography>
         </Grid2>
@@ -49,9 +48,8 @@ const CarInfo = ({ data }: CarInfoProps) => {
               입장 시간
             </Typography>
             <Grid2 width={"211px"} display={"flex"} justifyContent={"center"}>
-              <Typography fontSize={30} height={20} color={theme.colors.white2} sx={{ lineHeight: "20px" }}>
-                {/* 시간 형식 변경 필요 */}
-                {data.entry_time}
+              <Typography fontSize={30} height={20} color={theme.colors.white2} sx={{ lineHeight: "26px" }}>
+                {formatTime(Number(data.entry_time))}
               </Typography>
             </Grid2>
           </Grid2>
