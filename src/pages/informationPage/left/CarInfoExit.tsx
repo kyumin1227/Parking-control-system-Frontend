@@ -8,7 +8,7 @@ interface CarInfoProps {
 }
 
 function formatTime(timestamp: number): string {
-  return new Date(timestamp).toISOString().substr(11, 8);
+  return new Date(timestamp * 1000).toISOString().substr(11, 8);
 }
 
 const CarInfo = ({ data }: CarInfoProps) => {
