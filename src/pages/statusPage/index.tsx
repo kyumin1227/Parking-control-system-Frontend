@@ -31,11 +31,9 @@ const Status = () => {
     console.log(data?.data);
   }, [prevData, data]); // 데이터가 변경될 때마다 실행됨
 
-  // TODO 이동 구역의 좌표 정보를 받아와서 맞추는 코드 필요 (2번 왼쪽 위, 2번 오른쪽 아래, 9번 왼쪽 위, 7번 오른쪽 아래, 14번 왼쪽 위, 14번 오른쪽 아래)
-
   return (
     <>
-      <Grid2 container width={"100%"} height={"100%"}>
+      <Grid2 container width={"100%"} height={"100%"} sx={{ overflowY: "hidden" }}>
         {/* 왼쪽 */}
         <Grid2
           size={3}
@@ -77,13 +75,14 @@ const Status = () => {
                 {data?.data.moving ? (
                   Object.entries(data.data.moving).map(([key], index) => {
                     const keyAsNumber = parseInt(key);
-                    return (
-                      <MovingCar
-                        key={index}
-                        currentPosition={data.data.moving[keyAsNumber]?.position || [0, 0]}
-                        prevPosition={prevData?.data.moving[keyAsNumber].position || [0, 0]}
-                      />
-                    );
+                    const currentPosition = data.data.moving[keyAsNumber]?.position;
+                    const prevPosition = prevData?.data.moving[keyAsNumber]?.position;
+
+                    if (!currentPosition || !prevPosition) {
+                      return <></>;
+                    }
+
+                    return <MovingCar key={index} currentPosition={currentPosition} prevPosition={prevPosition} />;
                   })
                 ) : (
                   <></>
