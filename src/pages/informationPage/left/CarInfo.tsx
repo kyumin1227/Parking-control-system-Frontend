@@ -38,7 +38,8 @@ const CarInfo = ({ data }: CarInfoProps) => {
         <Grid2 size={10} display={"flex"} flexDirection={"column"} justifyContent={"space-around"}>
           <Grid2 display={"flex"}>
             <img src="/차량 번호.png" width={32} />
-            <Typography ml={1} fontSize={20}>
+            {/* 리눅스 환경에서 글자가 계속 밀려서 18로 수정 */}
+            <Typography ml={1} fontSize={18}>
               차량 번호
             </Typography>
             <Grid2 width={"211px"} display={"flex"} justifyContent={"center"}>
@@ -49,7 +50,7 @@ const CarInfo = ({ data }: CarInfoProps) => {
           </Grid2>
           <Grid2 display={"flex"}>
             <img src="/입장 시간.png" width={32} />
-            <Typography ml={1} fontSize={20}>
+            <Typography ml={1} fontSize={18}>
               입장 시간
             </Typography>
             <Grid2 width={"211px"} display={"flex"} justifyContent={"center"}>
