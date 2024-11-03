@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import Status from "./pages/statusPage";
 import Information from "./pages/informationPage";
+import Monitoring from "./monitoring";
 
 const Router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const Router = createBrowserRouter([
         element: <Information />,
       },
     ],
+  },
+  {
+    path: "/monitoring",
+    element: <Monitoring />,
   },
 ]);
 
