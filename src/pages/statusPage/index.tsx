@@ -15,7 +15,7 @@ import AllStatus from "./left/AllStatus";
 const Item = styled.div`
   background-color: #f5f2e9;
   border: 5px solid #aa2931;
-  height: 920px;
+  height: 935px;
   width: 1410px;
   position: relative;
 `;
@@ -76,7 +76,7 @@ const Status = () => {
             <Grid2 size={1} width={"100%"}>
               <Title />
             </Grid2>
-            <Grid2 size={11} height={"930px"} sx={{ backgroundColor: "#F5F2E9" }}>
+            <Grid2 size={11}>
               <Item>
                 {data?.data.parking ? <AreaA parking={data.data.parking} /> : <div>loading...</div>}
                 {data?.data.parking ? <AreaB parking={data.data.parking} /> : <div>loading...</div>}

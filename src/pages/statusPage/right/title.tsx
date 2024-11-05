@@ -4,7 +4,7 @@ import { Grid2, Typography } from "@mui/material";
 const Title = () => {
   return (
     <>
-      <Grid2 container mt={"10px"} mb={"10px"} display={"flex"} justifyContent={"center"}>
+      <Grid2 container mb={0.5} display={"flex"} justifyContent={"center"}>
         <img
           src="/p_image.svg"
           alt="P_image"
