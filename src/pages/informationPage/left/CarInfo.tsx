@@ -7,7 +7,14 @@ interface CarInfoProps {
 }
 
 function formatTime(timestamp: number): string {
-  return new Date(Math.floor(timestamp * 1000)).toISOString().substr(11, 8);
+  const date = new Date(timestamp * 1000); // 타임스탬프를 밀리초로 변환
+  return date.toLocaleTimeString("ko-KR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Seoul", // 한국 시간대 설정
+  });
 }
 
 const CarInfo = ({ data }: CarInfoProps) => {
