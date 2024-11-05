@@ -4,7 +4,7 @@ import Title from "./right/title";
 import GetData from "../../api/socket";
 import { useEffect, useState } from "react";
 import AreaA from "./right/areas/AreaA";
-import { DataType, ParkingsType, ParkingType } from "../../types";
+import { DataType } from "../../types";
 import AreaB from "./right/areas/AreaB";
 import AreaD from "./right/areas/AreaD";
 import AreaC from "./right/areas/AreaC";
