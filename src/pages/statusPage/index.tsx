@@ -98,7 +98,6 @@ const Status = () => {
                 ) : (
                   <></>
                 )}
-                <MovingCar currentPosition={[1, 3]} prevPosition={[10, 20]} />
               </Item>
             </Grid2>
           </Grid2>
