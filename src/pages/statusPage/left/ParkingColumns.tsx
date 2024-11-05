@@ -1,5 +1,6 @@
 import { Grid2, Typography } from "@mui/material";
 import { ParkingType } from "../../../types";
+import { AreaTypograpyh } from "../../../assets/theme";
 
 type ParkingColumnsProps = {
   parking: [string, ParkingType][];
@@ -24,18 +25,33 @@ const ParkingColumns = ({ parking, area }: ParkingColumnsProps) => {
   return (
     <>
       <Grid2 container spacing={2} height={"20%"} pt={2}>
-        <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#0D1117" }}>
-          <Typography fontSize={"30px"} color="#3572A5" style={{ display: "flex", alignItems: "center" }}>
+        <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#F0CF73" }}>
+          <AreaTypograpyh
+            fontWeight={700}
+            fontSize={"30px"}
+            color="#004E66"
+            style={{ display: "flex", alignItems: "center" }}
+          >
             {area}
-          </Typography>
+          </AreaTypograpyh>
         </Grid2>
-        <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#0D1117" }}>
-          <Typography fontSize={"30px"} color="#FE8019" style={{ display: "flex", alignItems: "center" }}>
+        <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#F0CF73" }}>
+          <Typography
+            fontWeight={700}
+            fontSize={"30px"}
+            color="#AA2931"
+            style={{ display: "flex", alignItems: "center" }}
+          >
             {parkingCount}
           </Typography>
         </Grid2>
-        <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#0D1117" }}>
-          <Typography fontSize={"30px"} color="#8EC07C" style={{ display: "flex", alignItems: "center" }}>
+        <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#F0CF73" }}>
+          <Typography
+            fontWeight={700}
+            fontSize={"30px"}
+            color="#395485"
+            style={{ display: "flex", alignItems: "center" }}
+          >
             {emptyCount}
           </Typography>
         </Grid2>

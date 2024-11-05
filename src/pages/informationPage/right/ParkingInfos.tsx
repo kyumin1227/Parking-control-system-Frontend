@@ -27,7 +27,9 @@ const ParkingInfos = ({ data }: ParkingInfosProps) => {
           sx={{ backgroundColor: theme.colors.grey2 }}
           key={i}
         >
-          <InformationTypography fontSize={60}>{i}</InformationTypography>
+          <InformationTypography color="#F5F2E9" fontSize={60}>
+            {i}
+          </InformationTypography>
         </Grid2>
       );
     }
@@ -39,7 +41,7 @@ const ParkingInfos = ({ data }: ParkingInfosProps) => {
         {/* info 아이콘 및 A ~ D 표시 */}
         <Grid2 width={72.8} height={"100%"} mr={1.5}>
           <Grid2>
-            <img src="/info.png" width={"100%"} />
+            <img src="/info.svg" width={"100%"} />
           </Grid2>
           {alphabets.map((letter, index) => (
             <Grid2
@@ -51,12 +53,14 @@ const ParkingInfos = ({ data }: ParkingInfosProps) => {
               alignItems={"center"}
               sx={{ backgroundColor: theme.colors.grey2 }}
             >
-              <InformationTypography fontSize={60}>{letter}</InformationTypography>
+              <InformationTypography color="#F5F2E9" fontSize={60}>
+                {letter}
+              </InformationTypography>
             </Grid2>
           ))}
         </Grid2>
         <Grid2 width={"100%"} height={"100%"}>
-          <Grid2 width={"100%"} height={"7%"} spacing={1} display={"flex"}>
+          <Grid2 width={"100%"} height={"71px"} spacing={1} display={"flex"}>
             {renderNumbers()}
           </Grid2>
           <Grid2 width={"100%"} height={221.5} mt={2.5}>
@@ -66,8 +70,8 @@ const ParkingInfos = ({ data }: ParkingInfosProps) => {
                 <ParkingInfosB data={Object.entries(data.data.parking).slice(6, 10)} />
                 <ParkingInfosC data={Object.entries(data.data.parking).slice(10, 14)} />
               </Grid2>
-              <Grid2 width={656.67} ml={1}>
-                <img src="/car_area.svg" width={"100%"} height={"100%"} />
+              <Grid2 width={656.67} ml={1} display={"flex"} justifyContent={"center"} overflow={"hidden"}>
+                <img src="/car_area.svg" height={"100%"} />
               </Grid2>
             </Grid2>
             <Grid2 mt={2.5}>

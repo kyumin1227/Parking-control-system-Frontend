@@ -15,15 +15,25 @@ const ParkingTable = ({ parking }: ParkingTableProps) => {
       <Grid2 height={"100%"}>
         <Grid2 container width={"100%"} spacing={2} height={"17%"}>
           <Grid2 size={4} display={"flex"} alignItems={"center"}>
-            <img src="/car_black.png" width={"100%"} />
+            <img src="/car_table.jpg" width={"100%"} />
           </Grid2>
-          <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#0D1117" }}>
-            <Typography fontSize={"30px"} color="#FE8019" style={{ display: "flex", alignItems: "center" }}>
+          <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#F0CF73" }}>
+            <Typography
+              fontWeight={700}
+              fontSize={"30px"}
+              color="#AA2931"
+              style={{ display: "flex", alignItems: "center" }}
+            >
               주차
             </Typography>
           </Grid2>
-          <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#0D1117" }}>
-            <Typography fontSize={"30px"} color="#8EC07C" style={{ display: "flex", alignItems: "center" }}>
+          <Grid2 size={4} display={"flex"} justifyContent={"center"} sx={{ backgroundColor: "#F0CF73" }}>
+            <Typography
+              fontWeight={700}
+              fontSize={"30px"}
+              color="#395485"
+              style={{ display: "flex", alignItems: "center" }}
+            >
               공차
             </Typography>
           </Grid2>

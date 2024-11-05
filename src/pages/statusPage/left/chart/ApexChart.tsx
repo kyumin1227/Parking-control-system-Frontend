@@ -13,7 +13,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ series }) => {
     chart: {
       type: "donut", // 도넛 차트로 설정
     },
-    colors: ["#FE8019", "#563D7C", "#8EC07C"], // 항목 3개의 색상 지정
+    colors: ["#AA2931", "#E1A609", "#405A89"], // 항목 3개의 색상 지정
     plotOptions: {
       pie: {
         donut: {
@@ -50,7 +50,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ series }) => {
 
   return (
     <div>
-      <ReactApexChart options={options} series={series} type="donut" width="250" />
+      <ReactApexChart options={options} series={series} type="donut" width="230px" />
     </div>
   );
 };

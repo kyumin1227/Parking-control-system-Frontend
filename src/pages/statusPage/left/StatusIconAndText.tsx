@@ -23,7 +23,7 @@ const StatusIconAndText = ({ color, text }: StatusIconAndTextProps) => {
           <img src="/車のアイコン素材.png" width={"60%"} />
         </Grid2>
         <Grid2>
-          <Typography fontSize={25} color={color}>
+          <Typography fontWeight={700} fontSize={25} color={color}>
             {text}
           </Typography>
         </Grid2>

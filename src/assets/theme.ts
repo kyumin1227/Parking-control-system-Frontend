@@ -1,22 +1,31 @@
+import { Typography } from "@mui/material";
 import "styled-components";
-import { DefaultTheme } from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   colors: {
-    yello: "#FABD2C",
-    orange: "#FE8019",
-    green: "#8EC07C",
-    purple: "#563D7C",
+    yello: "#AA2931",
+    orange: "#AA2931",
+    green: "#405A89",
+    purple: "#E1A609",
     blue: "#3572A5",
-    black: "#0D1117",
-    grey: "#2F2F2F",
-    grey2: "#7E7E7E",
+    black: "#F0CF73",
+    grey: "#F5F2E9",
+    grey2: "#395485",
     grey3: "#7D7D7D",
-    grey4: "#464646",
-    white: "#FFFFFF",
+    grey4: "#395485",
+    white: "#F5F2E9",
     white2: "#D9D9D9",
   },
 };
+
+export const StrokedTypography = styled(Typography)`
+  -webkit-text-stroke: 3px #f5f2e9;
+`;
+
+export const AreaTypograpyh = styled(Typography)`
+  -webkit-text-stroke: 1.5px #f5f2e9;
+`;
 
 declare module "styled-components" {
   export interface DefaultTheme {

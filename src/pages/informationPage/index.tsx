@@ -14,25 +14,27 @@ const Information = () => {
 
   return (
     <>
-      <Grid2 container height={"100%"} sx={{ border: `20px solid ${theme.colors.black}` }}>
-        <Grid2 size={3} sx={{ borderRight: `20px solid ${theme.colors.black}` }}>
-          <InformationTypography
-            fontSize={76}
-            color={theme.colors.yello}
-            height={"7%"}
-            lineHeight={"76px"}
-            display={"flex"}
-            justifyContent={"center"}
-          >
-            Information
-          </InformationTypography>
-          <Grid2 height={"93%"}>
-            {<CarsInfo text="주차 진행 중" data={data || { data: { parking: {}, moving: {}, time: 0 } }} />}
-            {<CarsInfo text="출차 중" data={data || { data: { parking: {}, moving: {}, time: 0 } }} />}
+      <Grid2 height={"1080px"} sx={{ border: `5px solid #AA2931`, borderLeft: "0px" }}>
+        <Grid2 container height={"100%"} sx={{ border: `20px solid ${theme.colors.black}` }}>
+          <Grid2 size={3} sx={{ borderRight: `20px solid ${theme.colors.black}` }}>
+            <InformationTypography
+              fontSize={76}
+              color={theme.colors.yello}
+              height={"7%"}
+              lineHeight={"76px"}
+              display={"flex"}
+              justifyContent={"center"}
+            >
+              Information
+            </InformationTypography>
+            <Grid2 height={"93%"}>
+              {<CarsInfo text="주차 진행 중" data={data || { data: { parking: {}, moving: {}, time: 0 } }} />}
+              {<CarsInfo text="출차 중" data={data || { data: { parking: {}, moving: {}, time: 0 } }} />}
+            </Grid2>
           </Grid2>
-        </Grid2>
-        <Grid2 size={9}>
-          <ParkingInfos data={data || { data: { parking: {}, moving: {}, time: 0 } }} />
+          <Grid2 size={9}>
+            <ParkingInfos data={data || { data: { parking: {}, moving: {}, time: 0 } }} />
+          </Grid2>
         </Grid2>
       </Grid2>
       <GetData data={data} setData={setData} prevData={prevData} setPrevData={setPrevData} />

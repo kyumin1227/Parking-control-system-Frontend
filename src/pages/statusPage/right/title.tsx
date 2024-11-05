@@ -6,13 +6,13 @@ const Title = () => {
     <>
       <Grid2 container mt={"10px"} mb={"10px"} display={"flex"} justifyContent={"center"}>
         <img
-          src="/P_image.png"
+          src="/p_image.svg"
           alt="P_image"
           width="70px"
           height="70px"
           style={{ marginTop: "5px", marginRight: "5px" }}
         />
-        <Typography color="#FABD2C" fontSize={"60px"}>
+        <Typography fontWeight={700} color="#AA2931" fontSize={"60px"}>
           arking Status
         </Typography>
       </Grid2>

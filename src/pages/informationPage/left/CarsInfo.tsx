@@ -18,18 +18,19 @@ const CarsInfo = ({ text, data }: CarsInfoProps) => {
   return (
     <>
       <Grid2
-        height={"483.59px"}
-        borderTop={`20px solid ${theme.colors.black}`}
+        height={"463.59px"}
+        marginTop={2.5}
         sx={{ backgroundColor: `${theme.colors.grey}`, overflowY: "hidden" }}
         p={2.5}
+        border={"5px solid #AA2931"}
       >
         <Typography
-          color={theme.colors.white}
+          color="#E1A609"
           fontSize={40}
           display={"flex"}
           justifyContent={"center"}
           pb={1}
-          borderBottom="1px solid white"
+          borderBottom="1px solid #E1A609"
         >
           {text}
         </Typography>

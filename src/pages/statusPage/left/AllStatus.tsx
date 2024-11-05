@@ -3,6 +3,7 @@ import { useTheme } from "styled-components";
 import DonutChart from "./chart/ApexChart";
 import StatusIconAndText from "./StatusIconAndText";
 import { ParkingsType } from "../../../types";
+import { StrokedTypography } from "../../../assets/theme";
 
 /** 왼쪽 위의 전체 주차 정보 ~ 도넛 차트 까지 */
 const AllStatus = ({ parking }: ParkingsType) => {
@@ -24,7 +25,7 @@ const AllStatus = ({ parking }: ParkingsType) => {
         {/* 주차, 공차 정보 */}
         <Grid2 container spacing={2}>
           <Grid2 size={6} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-            <Typography fontSize={40} color={theme.colors.orange}>
+            <Typography fontWeight={700} fontSize={40} color={theme.colors.orange}>
               주차
             </Typography>
             <Grid2
@@ -35,13 +36,13 @@ const AllStatus = ({ parking }: ParkingsType) => {
               sx={{ backgroundColor: theme.colors.black }}
               mt={1}
             >
-              <Typography fontSize={80} color={theme.colors.orange}>
+              <StrokedTypography fontWeight={700} fontSize={80} color={theme.colors.orange}>
                 {parkingLen}
-              </Typography>
+              </StrokedTypography>
             </Grid2>
           </Grid2>
           <Grid2 size={6} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-            <Typography fontSize={40} color={theme.colors.green}>
+            <Typography fontWeight={700} fontSize={40} color={theme.colors.green}>
               공차
             </Typography>
             <Grid2
@@ -52,14 +53,14 @@ const AllStatus = ({ parking }: ParkingsType) => {
               sx={{ backgroundColor: theme.colors.black }}
               mt={1}
             >
-              <Typography fontSize={80} color={theme.colors.green}>
+              <StrokedTypography fontWeight={700} fontSize={80} color={theme.colors.green}>
                 {targetLen + emptyLen}
-              </Typography>
+              </StrokedTypography>
             </Grid2>
           </Grid2>
         </Grid2>
         {/* 주차, 주차중, 공차 아이콘 & 도넛 차트 */}
-        <Grid2 container height={"100%"} mt={3}>
+        <Grid2 container height={"100%"} mt={5}>
           <Grid2 size={5} container display={"flex"}>
             <StatusIconAndText color={theme.colors.orange} text="주차" />
             <StatusIconAndText color={theme.colors.purple} text="주차중" />
@@ -69,8 +70,8 @@ const AllStatus = ({ parking }: ParkingsType) => {
             <DonutChart series={series} />
             <Grid2
               position={"absolute"}
-              top={65}
-              right={30}
+              top={60}
+              right={5}
               display={"flex"}
               justifyContent={"center"}
               sx={{ width: "170px", height: "70px" }}

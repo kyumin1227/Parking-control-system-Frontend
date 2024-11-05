@@ -4,7 +4,7 @@ import Title from "./right/title";
 import GetData from "../../api/socket";
 import { useEffect, useState } from "react";
 import AreaA from "./right/areas/AreaA";
-import { DataType } from "../../types";
+import { DataType, ParkingsType, ParkingType } from "../../types";
 import AreaB from "./right/areas/AreaB";
 import AreaD from "./right/areas/AreaD";
 import AreaC from "./right/areas/AreaC";
@@ -13,9 +13,10 @@ import ParkingTable from "./left/ParkingTable";
 import AllStatus from "./left/AllStatus";
 
 const Item = styled.div`
-  background-color: #2f2f2f;
-  height: 100%;
-  width: 100%;
+  background-color: #f5f2e9;
+  border: 5px solid #aa2931;
+  height: 920px;
+  width: 1410px;
   position: relative;
 `;
 
@@ -33,39 +34,49 @@ const Status = () => {
 
   return (
     <>
-      <Grid2 container width={"100%"} height={"100%"} sx={{ overflowY: "hidden" }}>
+      <Grid2
+        container
+        border={"5px solid #AA2931"}
+        borderRight={"0px"}
+        width={"1920px"}
+        height={"1080px"}
+        sx={{ overflowY: "hidden" }}
+      >
         {/* 왼쪽 */}
-        <Grid2
-          size={3}
-          sx={{ border: 20, borderColor: "#0D1117", backgroundColor: "#2f2f2f" }}
-          display={"flex"}
-          justifyContent={"center"}
-          alignContent={"center"}
-        >
-          <Grid2 display={"flex"} flexDirection={"column"} width={"410px"} height={"1010px"} marginTop={"15px"}>
-            <Grid2 display={"flex"} height={"5%"} justifyContent={"center"}>
-              <Typography fontSize={"40px"} color="#FABD2C">
-                전체 주차 정보
-              </Typography>
-            </Grid2>
-            <Grid2 height={"50%"}>
-              <AllStatus parking={data?.data.parking || {}} />
-            </Grid2>
-            <Grid2 height={"40%"}>
-              <ParkingTable parking={data?.data.parking || {}} />
-            </Grid2>
-            <Grid2 height={"auto"} mt={2.5}>
-              <img src="/logo.png" width={"100%"} />
+        <Grid2 height={"1070px"} size={3} padding={"20px"} paddingBottom={"10px"}>
+          <Grid2
+            sx={{ backgroundColor: "#F5F2E9" }}
+            display={"flex"}
+            justifyContent={"center"}
+            alignContent={"center"}
+            border={"5px solid #AA2931"}
+            height={"100%"}
+          >
+            <Grid2 display={"flex"} flexDirection={"column"} width={"350px"} height={"1010px"} marginTop={"15px"}>
+              <Grid2 display={"flex"} height={"5%"} justifyContent={"center"}>
+                <Typography fontWeight={700} fontSize={"40px"} color="#FABD2C">
+                  전체 주차 정보
+                </Typography>
+              </Grid2>
+              <Grid2 height={"50%"}>
+                <AllStatus parking={data?.data.parking || {}} />
+              </Grid2>
+              <Grid2 height={"40%"}>
+                <ParkingTable parking={data?.data.parking || {}} />
+              </Grid2>
+              <Grid2 height={"auto"} mt={2} mb={2}>
+                <img src="/logo.svg" width={"100%"} />
+              </Grid2>
             </Grid2>
           </Grid2>
         </Grid2>
         {/* 오른쪽 */}
-        <Grid2 size={9} sx={{ border: 20, borderLeft: 0, borderColor: "#0D1117" }}>
+        <Grid2 size={9} sx={{ border: 20, borderLeft: 0, borderColor: "#F0CF73" }}>
           <Grid2 container flexDirection={"column"}>
             <Grid2 size={1} width={"100%"}>
               <Title />
             </Grid2>
-            <Grid2 size={11} height={"930px"}>
+            <Grid2 size={11} height={"930px"} sx={{ backgroundColor: "#F5F2E9" }}>
               <Item>
                 {data?.data.parking ? <AreaA parking={data.data.parking} /> : <div>loading...</div>}
                 {data?.data.parking ? <AreaB parking={data.data.parking} /> : <div>loading...</div>}
@@ -87,6 +98,7 @@ const Status = () => {
                 ) : (
                   <></>
                 )}
+                <MovingCar currentPosition={[1, 3]} prevPosition={[10, 20]} />
               </Item>
             </Grid2>
           </Grid2>

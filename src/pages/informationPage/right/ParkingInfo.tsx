@@ -53,9 +53,13 @@ const ParkingInfo = ({ data }: ParkingInfoProps) => {
           justifyContent={"center"}
           sx={{ backgroundColor: theme.colors.orange }}
         >
-          <img src="/車のアイコン素材.png" width={"70%"} />
-          <InfoTypography fontSize={25}>{data.car_number}</InfoTypography>
-          <InfoTypography fontSize={25}>{parkingTimeDifference}</InfoTypography>
+          <img src="/parking_car_icon.svg" width={"70%"} />
+          <InfoTypography color={theme.colors.white} fontSize={25}>
+            {data.car_number}
+          </InfoTypography>
+          <InfoTypography color={theme.colors.white} fontSize={25}>
+            {parkingTimeDifference}
+          </InfoTypography>
         </Grid2>
       </>
     );
@@ -136,7 +140,7 @@ const ParkingInfo = ({ data }: ParkingInfoProps) => {
           />
           <Grid2 width={"70%"} height={"50%"}>
             <Grid2 width={"70%"} position={"absolute"} top={50} left={57}>
-              <img src="/car2.png" width={"40%"} />
+              <img src="/parking_car_icon2.svg" width={"40%"} />
             </Grid2>
           </Grid2>
           <InfoTypography color={theme.colors.white} fontSize={25}>
