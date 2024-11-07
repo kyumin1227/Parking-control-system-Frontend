@@ -11,6 +11,7 @@ const AreaC = ({ parking }: ParkingsType) => {
         <Grid2
           display={"flex"}
           flexWrap={"wrap"}
+          flexDirection={"column"}
           style={{
             width: "365px",
             height: "251px",
